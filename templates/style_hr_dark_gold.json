@@ -1,0 +1,296 @@
+{
+  "name": "hr_dark_gold_report",
+  "description": "深色底 + 金色強調色的政府/企業成果報告風格，全螢幕背景圖疊加半透明暗色、左上角金色短直條標題列、Noto Sans TC 全字重排版。適合年度成果報告、政策說明、績效評鑑類簡報。",
+  "source_deck": "人力資源管理創新績優奬勵成果報告.pptx",
+  "slide_width": 13.333,
+  "slide_height": 7.5,
+
+  "colors": {
+    "bg_dark": "121212",
+    "accent_gold": "F5A623",
+    "accent_indigo": "4F46E5",
+    "text_primary": "FFFFFF",
+    "text_secondary": "CBD5E1",
+    "text_muted": "94A3B8",
+    "text_faint": "757575"
+  },
+
+  "fonts": {
+    "heading": "Noto Sans TC",
+    "body": "Noto Sans TC"
+  },
+
+  "font_sizes": {
+    "title_cover": 48,
+    "title_closing": 52.5,
+    "title_section": 33,
+    "subtitle": 19.5,
+    "card_title": 21,
+    "body_normal": 15,
+    "caption": 12,
+    "caption_small": 9.75
+  },
+
+  "spacing": {
+    "line_height_title": 1.2,
+    "line_height_body": 1.6,
+    "bullet_row_gap_in": 0.927,
+    "card_gap_in": 0.208
+  },
+
+  "layout": {
+    "margin_left": 0.625,
+    "margin_right": 0.625,
+    "margin_top": 0.625,
+    "title_bar_width_in": 0.062,
+    "title_bar_height_in": 0.615,
+    "title_text_offset_x_in": 0.208,
+    "content_start_y_in": 2.08
+  },
+
+  "background_convention": {
+    "note": "每頁背景其實是一張 13.333x7.5 的全滿版圖片（暗化/漸層處理過的相片或抽象圖），不是純色色塊。若無合適圖庫，可退回 solid bg_dark(#121212) 或 121212→1A1A24 的極淡漸層。",
+    "full_bleed": { "x": 0, "y": 0, "w": 13.333, "h": 7.5 }
+  },
+
+  "slide_layouts": [
+
+    {
+      "id": "cover",
+      "name": "封面",
+      "use_case": "第1頁，簡報開場",
+      "based_on_slides": [1],
+      "background": "full_bleed_image",
+      "elements": [
+        {
+          "type": "title",
+          "position": { "x": 0.32, "y": 2.16, "w": 12.69, "h": 1.6 },
+          "align": "center",
+          "font_size": "title_cover",
+          "bold": true,
+          "line_height": "line_height_title",
+          "note": "兩行標題；第一行 text_primary(白)，第二行（強調詞，如『創新績優奬勵』）改用 accent_gold"
+        },
+        {
+          "type": "subtitle_block",
+          "position": { "x": 0.625, "y": 3.97, "w": 12.08, "h": 1.22 },
+          "align": "center",
+          "font_size": "subtitle",
+          "color": "text_muted",
+          "note": "副標一行＋空一行＋單位/署名一行"
+        }
+      ]
+    },
+
+    {
+      "id": "section_header",
+      "name": "頁首標題列（共用元件，非獨立版型）",
+      "use_case": "除封面/結語外每頁左上角都有",
+      "elements": [
+        {
+          "type": "accent_bar",
+          "position": { "x": 0.625, "y": 0.625, "w": 0.062, "h": 0.615 },
+          "fill": "accent_gold"
+        },
+        {
+          "type": "title",
+          "position": { "x": 0.833, "y": 0.625, "w": 12.47, "h": 0.615 },
+          "align": "left",
+          "font_size": "title_section",
+          "bold": true,
+          "color": "text_primary"
+        }
+      ]
+    },
+
+    {
+      "id": "split_bullets_image",
+      "name": "左側條列＋右側整塊圖片",
+      "use_case": "說明背景動機、策略重點、追蹤成效等 2-4 點條列說明，右側配一張情境圖",
+      "based_on_slides": [2, 6, 9],
+      "background": "full_bleed_image",
+      "includes": ["section_header"],
+      "elements": [
+        {
+          "type": "image_panel",
+          "position": { "x": 6.98, "y": 2.08, "w": 5.73, "h": 4.38 },
+          "note": "單張圖片，垂直置中於條列區塊高度範圍"
+        },
+        {
+          "type": "bullet_list",
+          "item_count": "2-4，依內容量調整",
+          "start_position": { "x": 0.99, "y": 2.08 },
+          "item_width_in": 5.37,
+          "row_height_in": 0.667,
+          "row_gap_in": 0.927,
+          "marker": {
+            "char": "■",
+            "position_offset": { "x": -0.37, "y": 0.02 },
+            "size_in": 0.125,
+            "color": "accent_gold"
+          },
+          "text_style": {
+            "font_size": "body_normal",
+            "line_height": "line_height_body",
+            "label_run": { "bold": true, "color": "text_primary" },
+            "desc_run": { "bold": false, "color": "text_secondary" }
+          },
+          "note": "每項為單一段落：粗體白色短標籤＋一般次要色說明文字，例如「整合各項管理策略： 過去…」"
+        }
+      ]
+    },
+
+    {
+      "id": "three_card_grid",
+      "name": "三欄卡片（圖＋圖示＋標題＋說明）",
+      "use_case": "並列呈現 3 項策略/類別總覽",
+      "based_on_slides": [3],
+      "background": "full_bleed_image",
+      "includes": ["section_header"],
+      "elements": [
+        {
+          "type": "card",
+          "repeat": 3,
+          "column_x": [0.625, 4.79, 8.96],
+          "image": { "y": 2.55, "w": 3.75, "h": 3.43 },
+          "icon_overlay": {
+            "w": 0.4, "h": 0.52,
+            "position": "圖片上緣中央偏內，疊在圖片上方置中"
+          },
+          "title": {
+            "y_offset_from_image_bottom_in": 0.29,
+            "align": "center",
+            "font_size": "card_title",
+            "bold": true,
+            "color": "text_primary"
+          },
+          "body": {
+            "align": "center",
+            "font_size": "body_normal",
+            "color": "text_secondary",
+            "line_height": "line_height_body"
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "two_card_columns",
+      "name": "雙欄卡片（圖＋金色小標＋說明，左對齊）",
+      "use_case": "並列 2 項子主題的深入說明",
+      "based_on_slides": [5],
+      "background": "full_bleed_image",
+      "includes": ["section_header"],
+      "elements": [
+        {
+          "type": "card",
+          "repeat": 2,
+          "column_x": [0.625, 6.98],
+          "image": { "y": 2.77, "w": 5.73, "h": 3.0 },
+          "title": {
+            "y": 3.19,
+            "align": "left",
+            "font_size": "card_title",
+            "bold": true,
+            "color": "accent_gold",
+            "note": "此版型標題用金色，非白色"
+          },
+          "body": {
+            "y": 3.85,
+            "w": 4.88,
+            "align": "left",
+            "font_size": "body_normal",
+            "color": "text_secondary",
+            "line_height": "line_height_body"
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "half_bleed_image_text",
+      "name": "半版跨頁圖片＋文字說明（左右可鏡射）",
+      "use_case": "單一主題深入說明，1-2 個子段落（小標＋段落）",
+      "based_on_slides": [4, 7, 8],
+      "background": "full_bleed_image",
+      "includes": ["section_header"],
+      "variants": {
+        "image_right_full_height": {
+          "based_on_slides": [4, 8],
+          "image": { "x": 6.93, "y": 0, "w": 6.41, "h": 7.5, "note": "滿版右半邊，上下貼齊，slide8為此極端；slide4圖片較短未必貼滿" },
+          "text_column": {
+            "x": 0.625, "w": 5.29,
+            "blocks": [
+              { "type": "subheader", "y": 2.78, "h": 0.4, "font_size": "card_title", "bold": true, "color": "text_primary" },
+              { "type": "paragraph", "y": 3.33, "h": 1.0, "font_size": "body_normal", "color": "text_secondary", "line_height": "line_height_body" },
+              { "type": "paragraph", "y": 4.54, "h": 1.0, "font_size": "body_normal", "color": "text_secondary", "line_height": "line_height_body", "optional": true }
+            ]
+          }
+        },
+        "image_left_centered": {
+          "based_on_slides": [7],
+          "image": { "x": 1.41, "y": 2.18, "w": 4.17, "h": 4.17, "note": "正方形置中於左半邊" },
+          "text_column": {
+            "x": 6.98, "w": 5.5,
+            "blocks": [
+              { "type": "subheader", "y": 3.25, "h": 0.4, "font_size": "card_title", "bold": true, "color": "text_primary" },
+              { "type": "paragraph", "y": 3.80, "h": 1.33, "font_size": "body_normal", "color": "text_secondary", "line_height": "line_height_body" }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "id": "closing",
+      "name": "結語頁",
+      "use_case": "最後一頁，感謝／問答",
+      "based_on_slides": [10],
+      "background": "full_bleed_image",
+      "elements": [
+        {
+          "type": "title",
+          "position": { "x": 0.32, "y": 2.39, "w": 12.69, "h": 0.98 },
+          "align": "center",
+          "font_size": "title_closing",
+          "bold": true,
+          "color": "accent_gold"
+        },
+        {
+          "type": "subtitle",
+          "position": { "x": 0.625, "y": 3.58, "w": 12.08, "h": 0.43 },
+          "align": "center",
+          "font_size": "subtitle",
+          "color": "text_secondary"
+        },
+        {
+          "type": "logo_image",
+          "position": { "x": 5.75, "y": 4.58, "w": 1.83, "h": 0.53 },
+          "optional": true
+        }
+      ]
+    },
+
+    {
+      "id": "image_sources_list",
+      "name": "圖片來源／參考資料列表",
+      "use_case": "附錄頁，列出每張圖片的來源連結",
+      "based_on_slides": [11],
+      "background": "full_bleed_image",
+      "includes": ["section_header"],
+      "elements": [
+        {
+          "type": "source_row",
+          "repeat": "依來源數量",
+          "row": { "x": 0.625, "w": 12.08, "h": "0.86-1.08，依內容自動調整", "start_y": 1.43 },
+          "sub_elements": [
+            { "type": "thumbnail", "size_in": "約 0.6x0.6", "align": "left" },
+            { "type": "link_text", "font_size": "caption", "color": "accent_indigo" },
+            { "type": "source_label", "font_size": "caption_small", "color": "text_faint" }
+          ],
+          "note": "每列間用細分隔或僅靠間距區隔，無明顯 divider 線條"
+        }
+      ]
+    }
+  ]
+}

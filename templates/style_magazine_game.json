@@ -1,0 +1,49 @@
+{
+  "name": "magazine_game_style",
+  "description": "雜誌風非對稱版面 + 遊戲/像素風美術配色，適合遊戲心得、創意分享、輕鬆讀書會類簡報",
+  "slide_width": 13.333,
+  "slide_height": 7.5,
+  "colors": {
+    "bg_dark": "#121218",
+    "bg_card": "#1A1A24",
+    "accent_gold": "#D4A537",
+    "accent_teal": "#2ECCA8",
+    "accent_pink": "#E86CA0",
+    "accent_orange": "#E67E22",
+    "text_primary": "#F0F0F0",
+    "text_secondary": "#A0A0B0",
+    "text_muted": "#707080",
+    "divider": "#303040"
+  },
+  "fonts": {
+    "heading": "Microsoft JhengHei",
+    "body": "Microsoft JhengHei",
+    "mono": "Consolas"
+  },
+  "font_sizes": {
+    "title_main": 56,
+    "title_section": 36,
+    "title_slide": 34,
+    "subtitle": 22,
+    "body_large": 20,
+    "body_normal": 18,
+    "body_small": 16,
+    "caption": 14,
+    "page_num": 16
+  },
+  "spacing": {
+    "line_height": 1.35,
+    "bullet_spacing": 10,
+    "paragraph_spacing": 6,
+    "section_gap": 0.3
+  },
+  "layout": {
+    "margin_left": 0.6,
+    "margin_right": 0.6,
+    "margin_top": 0.3,
+    "margin_bottom": 0.3,
+    "accent_bar_width_pt": 6,
+    "title_bar_height": 1.2,
+    "content_start_y": 2.3
+  }
+}
