@@ -160,3 +160,7 @@ Engine 2 guarantees that every visual atom shares the exact cosmetic lineage of 
 - `scripts/pptx_to_images.py`: PPTX-to-PNG rendering helper.
 - `scripts/add_speaker_notes.py`: Programmatic speaker notes injection script.
 - `scripts/layout_bounds_check.py`: Deterministic structural QA fallback for Step 4 when LibreOffice is unavailable.
+
+## Development Notes
+
+This section is used for development notes.
